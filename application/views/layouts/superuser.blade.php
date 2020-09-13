@@ -9,7 +9,7 @@
     <meta name="author" content="" />
     <title>Dashboard - SB Admin</title>
     <link href="{{base_url()}}/static/css/styles.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{base_url()}}/static/css/bootstrap413.css">
     <link href="{{base_url()}}/static/assets/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="{{base_url()}}/static/assets/font-awesome-513/all.min.js" crossorigin="anonymous"></script>
     @yield('css')
@@ -89,6 +89,10 @@
 <script src="{{base_url()}}/static/assets/datatables/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 <script src="{{base_url()}}/static/assets/datatables/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 @yield('js')
-
+<style type="text/css">
+    table tbody tr td {
+        font-size: 15px;
+    }
+</style>
 </body>
 </html>

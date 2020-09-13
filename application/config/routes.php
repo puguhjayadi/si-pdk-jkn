@@ -63,6 +63,7 @@ $routeResource = [
 	'/datatable' => 'datatable', 
 	'/create' => 'create', 
 	'/store' => 'store', 
+	'/excel' => 'excel', 
 	'/edit/(:num)' => 'edit/$1', 
 	'/update/(:num)' => 'update/$1', 
 	'/delete/(:num)' => 'delete/$1', 
