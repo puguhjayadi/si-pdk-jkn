@@ -1,6 +1,6 @@
 <?php
 
-class ApbController extends MY_Controller
+class Apb extends MY_Controller
 {
 	public function __construct()
 	{
@@ -10,14 +10,14 @@ class ApbController extends MY_Controller
 
 	public function index()
 	{
-		$this->load->model('penduduk/PendudukModel');
-		$this->load->model('keluarga/KeluargaModel');
-		$this->load->model('apb/ApbModel');
-		$this->load->model('jkn/JknModel');
-		$data['countPenduduk'] = $this->PendudukModel->findRows();
-		$data['countKeluarga'] = $this->KeluargaModel->findRows();
-		$data['countApb'] = $this->ApbModel->findRows();
-		$data['countJkn'] = $this->JknModel->findRows();
+		$this->load->model('penduduk/Model_penduduk');
+		$this->load->model('keluarga/Model_keluarga');
+		$this->load->model('apb/Model_apb');
+		$this->load->model('jkn/Model_jkn');
+		$data['countPenduduk'] = $this->Model_penduduk->findRows();
+		$data['countKeluarga'] = $this->Model_keluarga->findRows();
+		$data['countApb'] = $this->Model_apb->findRows();
+		$data['countJkn'] = $this->Model_jkn->findRows();
 		$this->blade->render('apb_index', $data);
 	}
 

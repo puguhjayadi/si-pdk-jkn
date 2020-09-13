@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'auth/index';
 
-$route['index'] = 'penduduk/PendudukController/index';
+$route['index'] = 'penduduk/Penduduk/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -79,10 +79,10 @@ $routeResource = [
 ];
 
 foreach ($routeResource as $url => $method) {
-	$route["penduduk".$url] = "penduduk/PendudukController/".$method;
-	$route["keluarga".$url] = "keluarga/KeluargaController/".$method;
-	$route["jkn".$url] = "jkn/JknController/".$method;
-	$route["apb".$url] = "apb/ApbController/".$method;
+	$route["penduduk".$url] = "penduduk/Penduduk/".$method;
+	$route["keluarga".$url] = "keluarga/Keluarga/".$method;
+	$route["jkn".$url] = "jkn/Jkn/".$method;
+	$route["apb".$url] = "apb/Apb/".$method;
 }
 
 

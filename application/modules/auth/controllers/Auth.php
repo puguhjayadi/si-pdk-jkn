@@ -6,7 +6,7 @@ class Auth extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('user/UserModel');
+        $this->load->model('user/Model_user');
     }
 
     //--------------------------------------------------------------------
@@ -38,7 +38,7 @@ class Auth extends CI_Controller
             return;
         }
 
-        $user_db_admin = $this->UserModel->findWhere($username, 'username');
+        $user_db_admin = $this->Model_user->findWhere($username, 'username');
 
         if (!empty($user_db_admin)) {
             if (password_verify($password, $user_db_admin[0]->password) === false) {
@@ -58,7 +58,7 @@ class Auth extends CI_Controller
                 'last_login' => $user_db_admin[0]->last_login,
                 'total_login' => $user_db_admin[0]->total_login,
             ];
-            $this->UserModel->update($user_db_admin[0]->id, ['last_login' => date('Y-m-d H:i:s'), 'total_login' => ((int) $user_db_admin[0]->total_login+1)]);
+            $this->Model_user->update($user_db_admin[0]->id, ['last_login' => date('Y-m-d H:i:s'), 'total_login' => ((int) $user_db_admin[0]->total_login+1)]);
         } 
         else {
 
