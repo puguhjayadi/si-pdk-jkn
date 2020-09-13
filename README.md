@@ -1,13 +1,10 @@
-###################
-SI PDK & JKN
-###################
+# SI PDK & JKN
 
-Deskripsi
+## Deskripsi
+deskripsi singkat
 
-*******************
-Instalasi
-*******************
 
+## Instalasi
 1. Pastikan sudah install web server dan MySQL seperti [XAMPP](https://www.apachefriends.org/download.html)
 2. Masuk pada folder "XAMPP\htdocs"
 2. Download/clone repo ``git clone https://gitlab.com/puguhjayadi/si-pdk-jkn.git`` 
