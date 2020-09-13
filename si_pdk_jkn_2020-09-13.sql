@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.26)
 # Database: si_pdk_jkn
-# Generation Time: 2020-09-13 05:01:35 +0000
+# Generation Time: 2020-09-13 10:01:22 +0000
 # ************************************************************
 
 
@@ -121,6 +121,18 @@ CREATE TABLE `tbl_dt_peserta_apb` (
   `jenis_bantuan_diterima` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+LOCK TABLES `tbl_dt_peserta_apb` WRITE;
+/*!40000 ALTER TABLE `tbl_dt_peserta_apb` DISABLE KEYS */;
+
+INSERT INTO `tbl_dt_peserta_apb` (`nik_anggota`, `nama`, `nik_ktp`, `jenis_bantuan_diterima`)
+VALUES
+	('1001020803880005','Agus','1001020803880005','PKH'),
+	('1001020803880006','Bayu','1001020803880006','Sembako'),
+	('1001020803880001','Candra','1001020803880001','KIS'),
+	('1001020803880002','Deni','1001020803880002','KIP');
+
+/*!40000 ALTER TABLE `tbl_dt_peserta_apb` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table tbl_dt_peserta_jkn
@@ -147,6 +159,44 @@ VALUES
 	('100090807033','FRANS','06-02-1989','3002020803880006','II','SENTANI');
 
 /*!40000 ALTER TABLE `tbl_dt_peserta_jkn` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table tbl_user
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `tbl_user`;
+
+CREATE TABLE `tbl_user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(25) NOT NULL DEFAULT '',
+  `nama` varchar(100) NOT NULL DEFAULT '',
+  `image` text,
+  `telepon` varchar(255) DEFAULT NULL,
+  `email` varchar(100) DEFAULT '',
+  `alamat` varchar(255) DEFAULT NULL,
+  `password` varchar(191) NOT NULL DEFAULT '',
+  `level` tinyint(3) unsigned NOT NULL,
+  `token` varchar(191) DEFAULT '',
+  `last_login` datetime DEFAULT NULL,
+  `total_login` int(10) DEFAULT '0',
+  `is_active` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_by` int(10) unsigned DEFAULT NULL,
+  `updated_by` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE KEY `uq_username` (`username`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+LOCK TABLES `tbl_user` WRITE;
+/*!40000 ALTER TABLE `tbl_user` DISABLE KEYS */;
+
+INSERT INTO `tbl_user` (`id`, `username`, `nama`, `image`, `telepon`, `email`, `alamat`, `password`, `level`, `token`, `last_login`, `total_login`, `is_active`, `created_at`, `updated_at`, `created_by`, `updated_by`)
+VALUES
+	(1,'superuser','SUPERUSER','superuser.jpeg','027434','superuser@mail.com','asd','$2y$10$3/shGiewdcdq1MNDFIq8EuCNg86SEdZB7IalUEFiJlSz8nhq0t.i2',0,'55ac8a5ad4817eb480b1d4fb2c483f0a937eb6f720b49a07557548ce912656f6','2020-09-13 17:00:53',100,1,'2018-08-01 17:01:08','2020-08-03 10:48:34',NULL,NULL);
+
+/*!40000 ALTER TABLE `tbl_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

@@ -15,6 +15,7 @@ class PendudukController extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		$this->guardPage([0, 1]);
 	}
 
 	public function index()

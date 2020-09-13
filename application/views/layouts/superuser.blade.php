@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>Dashboard - SI PDK & JKN</title>
     <link href="{{base_url()}}/static/css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{{base_url()}}/static/css/bootstrap413.css">
     <link href="{{base_url()}}/static/assets/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -21,11 +21,11 @@
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <ul class="navbar-nav  ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i> Superuser</a>
+                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i> {{ $this->session->userdata('nama') }}</a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="#">Profil</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <a class="dropdown-item" href="logout.html">Logout</a>
                 </div>
             </li>
         </ul>
@@ -51,14 +51,14 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                         Data APB
                     </a>
-                    <a class="nav-link" href="login.html">
+                    <a class="nav-link" href="logout.html">
                         <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
                         Keluar
                     </a>
                 </div>
             </div>
             <div class="sb-sidenav-footer">
-                <div class="small">v0.0.0</div>
+                <div class="small">v0.0.1</div>
             </div>
         </nav>
     </div>
@@ -84,14 +84,15 @@
 <script src="{{base_url()}}/static/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="{{base_url()}}/static/js/scripts.js"></script>
 <script src="{{base_url()}}/static/assets/chartjs/Chart.min.js" crossorigin="anonymous"></script>
-<script src="{{base_url()}}/static/assets/demo/chart-area-demo.js"></script>
-<script src="{{base_url()}}/static/assets/demo/chart-bar-demo.js"></script>
 <script src="{{base_url()}}/static/assets/datatables/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 <script src="{{base_url()}}/static/assets/datatables/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 @yield('js')
 <style type="text/css">
     table tbody tr td {
         font-size: 15px;
+    }
+    .sb-sidenav .sb-sidenav-menu .nav .nav-link {
+        font-size: 14px;
     }
 </style>
 </body>

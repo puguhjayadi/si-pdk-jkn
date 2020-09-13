@@ -110,6 +110,11 @@ class MY_Model extends CI_Model
         return $this->db->get_where($this->table, $dataWhere)->result();
     }
 
+    public function findWhere($id, $fieldWhere)
+    {
+        return $this->db->get_where($this->table, [$fieldWhere => $id])->result();
+    }
+
 
     public function runSql($sql)
     {

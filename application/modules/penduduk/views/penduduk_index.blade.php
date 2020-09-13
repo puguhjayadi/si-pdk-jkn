@@ -113,8 +113,6 @@
 @section('js')
 
 <!-- Page custom scripts -->
-<script src="{{base_url()}}/static/assets/demo/chart-pie-demo.js"></script>
-
 <script type="text/javascript">
 	$(function () {
 		table = $('#dataTable').DataTable({

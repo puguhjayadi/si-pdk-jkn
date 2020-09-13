@@ -16,7 +16,7 @@ class MY_Controller extends CI_Controller
 
         // Copy userdata to local variable.
         $this->userdata = $this->session->userdata();
-        // $this->checkPathMysql();
+        $this->authRedirect();
     }
 
 
