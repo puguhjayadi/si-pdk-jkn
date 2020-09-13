@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'auth/index';
 
-// $route['default_controller'] = 'welcome';
+$route['index'] = 'penduduk/PendudukController/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
